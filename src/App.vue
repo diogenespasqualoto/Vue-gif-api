@@ -1,25 +1,26 @@
 <template>
-  
+  <div>
+    <Search />
+    <gif-list :gifs="gifs" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Search from "@/components/Search.vue";
+import GifList from "./components/GifList.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    GifList,
+    Search,
+  },
+  data() {
+    return {
+      gifs: [],
+    };
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
