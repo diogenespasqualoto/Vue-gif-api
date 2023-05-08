@@ -11,7 +11,7 @@
 ```bash
 git clone https://github.com/diogenespasqualoto/Vue-gif-api.git
 cd Vue-gif-api
-yarn install
+yarn install && yarn serve
 ```
 
 # Funcionalidades
