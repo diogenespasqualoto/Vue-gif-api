@@ -1,26 +1,44 @@
 <template>
-  <div>
-    <Search />
-    <gif-list :gifs="gifs" />
-  </div>
+  <search-input @gifs-fetched="onGifsFetched" />
+
+  <gif-list :gifs="gifs" />
 </template>
 
 <script>
-import Search from "@/components/Search.vue";
-import GifList from "./components/GifList.vue";
+import SearchInput from "@/components/SearchInput";
+import GifList from "@/components/GifList";
 
 export default {
   name: "App",
   components: {
     GifList,
-    Search,
+    SearchInput,
   },
   data() {
     return {
       gifs: [],
     };
   },
+  methods: {
+    onGifsFetched(result) {
+      console.log(result);
+      this.gifs = result.data;
+    },
+  },
 };
 </script>
 
-<style></style>
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  background: black;
+  padding: 50px;
+}
+
+#app {
+  width: 800px;
+  margin: 0 auto;
+}
+</style>
